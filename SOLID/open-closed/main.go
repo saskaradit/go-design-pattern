@@ -4,7 +4,7 @@ import "fmt"
 
 // OCP
 // open for extension, closed for modification
-// Specification
+// similar to specification approach
 type Color int
 
 const (
@@ -59,6 +59,7 @@ func (f *Filter) FilterBySize(products []Product, size Size) []*Product {
 // This is the wrong approach
 
 // Implementing Specification
+// Below is the correct approach
 type Specification interface {
 	IsSatisfied(p *Product) bool
 }
@@ -89,6 +90,7 @@ func (a AndSpecification) IsSatisfied(p *Product) bool {
 
 type BetterFilter struct{}
 
+// Filter implements filtering by accepting a specification interface and returns a result array
 func (f *BetterFilter) Filter(produts []Product, spec Specification) []*Product {
 	result := make([]*Product, 0)
 	for i, v := range produts {
