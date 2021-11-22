@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
-	"net/url"
 	"strings"
 )
 
@@ -28,7 +27,7 @@ func (j *Journal) RemoveEntry(index int) {
 	// ...
 }
 
-// Separtaion of concerns
+// Separation of concerns
 
 func (j *Journal) Save(filename string) {
 	_ = ioutil.WriteFile(filename, []byte(j.String()), 0644)
@@ -38,22 +37,19 @@ func (j *Journal) Load(filename string) {
 	// ...
 }
 
-func (j *Journal) LoadFromWeb(url *url.URL) {
-
-}
-
 var LineSeparator = "\n"
 
 func SaveToFile(j *Journal, filename string) {
-	_ = ioutil.WriteFile(strings.Join(j.entries, LineSeparator), []byte(j.String()), 0644)
+	_ = ioutil.WriteFile(filename, []byte(strings.Join(j.entries, LineSeparator)), 0644)
 }
 
+// Create a new object so that if other objects have the same purpose, we can use this object
 type Persistence struct {
 	lineSeparator string
 }
 
 func (p *Persistence) SaveToFile(j *Journal, filename string) {
-	_ = ioutil.WriteFile(strings.Join(j.entries, p.lineSeparator), []byte(j.String()), 0644)
+	_ = ioutil.WriteFile(filename, []byte(strings.Join(j.entries, LineSeparator)), 0644)
 }
 
 func main() {
@@ -65,6 +61,7 @@ func main() {
 
 	// SaveToFile(&j, "journal.txt")
 
+	// using the new persistence so that if another object needs to save to a file
 	p := Persistence{"\n"}
-	p.SaveToFile(&j, "journal.txt")
+	p.SaveToFile(&j, "./journal.txt")
 }
