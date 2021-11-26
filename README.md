@@ -45,8 +45,8 @@ The design pattern originally works on pure OOP Languages, so I am trying my way
 ├── decorator
 │   ├── decorator
 │   │   └── decorator.go
-│   ├── decorator.go
 │   └── multi-aggregate
+│       └── decorator.go
 ├── facade
 │   └── facade.go
 ├── factories
@@ -65,6 +65,11 @@ The design pattern originally works on pure OOP Languages, so I am trying my way
 │       └── username.go
 ├── interpreter
 │   └── lexing.go
+├── iterator
+│   ├── iterator
+│   │   └── iterator.go
+│   └── tree-traversal
+│       └── tree.go
 ├── prototype
 │   ├── copy-method
 │   │   └── copy-method.go
