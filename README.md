@@ -70,6 +70,20 @@ The design pattern originally works on pure OOP Languages, so I am trying my way
 │   │   └── iterator.go
 │   └── tree-traversal
 │       └── tree.go
+├── mediator
+│   └── chat-room.go
+├── memento
+│   ├── memento
+│   │   └── memento.go
+│   └── undo-redo
+│       └── undo-redo.go
+├── observer
+│   ├── observer
+│   │   └── observer-able.go
+│   ├── property-dependency
+│   │   └── property-dependency.go
+│   └── property-observer
+│       └── property-observer.go
 ├── prototype
 │   ├── copy-method
 │   │   └── copy-method.go
