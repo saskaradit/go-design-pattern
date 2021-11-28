@@ -98,7 +98,28 @@ The design pattern originally works on pure OOP Languages, so I am trying my way
 │   │   └── protection-proxy.go
 │   └── virtual-proxy
 │       └── virtual-proxy.go
-└── singleton
-    ├── capitals.txt
-    └── singleton.go
+├── singleton
+│   ├── capitals.txt
+│   └── singleton.go
+├── state
+│   ├── classic
+│   │   └── classic.go
+│   ├── handmade
+│   │   └── handmade.go
+│   └── switch
+│       └── switch-state.go
+├── strategy
+│   └── strategy.go
+├── template-method
+│   ├── functional
+│   │   └── functional.go
+│   └── template
+│       └── template.go
+└── visitor
+    ├── classic
+    │   └── classic.go
+    ├── intrusive
+    │   └── intrusive.go
+    └── reflective
+        └── reflective.go
 ```
